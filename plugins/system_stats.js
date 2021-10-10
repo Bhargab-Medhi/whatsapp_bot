@@ -26,14 +26,14 @@ if (Config.WORKTYPE == 'private') {
             
             var image = await axios.get (Config.ALIVE_LOGO, {responseType: 'arraybuffer'})
        
-        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```👸Hey There! I'm Online now.😊```\n\n*Developers:* ```Büññy® & Black Amda```\n\n```Thank You For Using Büññy®Bot💝```"})
+        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```I'm Online now😒.```\n\n*Developers:* ```Büññy® & Black Amda```\n\n```Thank You For Using Büññy®Bot💝```"})
 
     }
     else {
             
             var image = await axios.get (Config.ALIVE_LOGO, {responseType: 'arraybuffer'})
        
-        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: Config.ALIVEMSG + '\n\n*Copyright © 2021 | Büññy®Bot*' })
+        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: Config.ALIVEMSG + '\n\n*Copyright © 2021 | Mr. B Bot*' })
      }
     }));
 
@@ -48,8 +48,8 @@ if (Config.WORKTYPE == 'private') {
     Amdi.applyCMD({pattern: 'version', fromMe: true, desc: Lang.BOT_V,  deleteCommand: false}, (async (message, match) => {    
     
         await message.client.sendMessage(message.jid, 
-                `*🧬 Büññy®Bot Version 🧬*\n\n` + 
-                '```Installed version : 1.2.0v (Maybe Stable)```\n' +
+                `*🧬 Mr. B Bot Version 🧬*\n\n` + 
+                '```Installed version : 1.0.0v (Maybe Stable)```\n' +
                 `\n\nCheck official website : I dont have one right now😹`
            , MessageType.text);
             
@@ -63,14 +63,14 @@ else if (Config.WORKTYPE == 'public') {
             
             var image = await axios.get (Config.ALIVE_LOGO, {responseType: 'arraybuffer'})
        
-        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```👸Hey There! I'm Online now.😊```\n\n*Developers:* ```Büññy® & Black Amda```\n\n```Thank You For Using Büññy®Bot💝```"})
+        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: "```I'm Online now😒.```\n\n*Developers:* ```Büññy® & Bhargab```\n\n```Thank You For Using Mr. B Bot💝```"})
 
     }
     else {
             
             var image = await axios.get (Config.ALIVE_LOGO, {responseType: 'arraybuffer'})
        
-        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: Config.ALIVEMSG + '\n\n*Copyright © 2021 | Büññy®Bot*' })
+        await message.client.sendMessage (message.jid, Buffer.from (image.data), MessageType.image, {mimetype: Mimetype.png, caption: Config.ALIVEMSG + '\n\n*Copyright © 2021 | Mr. B Bot*' })
      }
     }));
 
@@ -85,7 +85,7 @@ else if (Config.WORKTYPE == 'public') {
     Amdi.applyCMD({pattern: 'version', fromMe: false, desc: Lang.BOT_V}, (async (message, match) => {    
     
         await message.client.sendMessage(message.jid, 
-                `*🧬 Büññy®Bot Version 🧬*\n\n` + 
+                `*🧬 Mr. B Bot Version 🧬*\n\n` + 
                 '```Installed version : 1.0.0v (Maybe Stable)```\n' + 
                 `\n\nCheck official website : I dont have one right now😹`
            , MessageType.text);

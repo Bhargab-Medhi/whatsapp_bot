@@ -26,7 +26,7 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	const json = JSON.parse(response.body);
 	if (json.Response != 'True') return await message.client.sendMessage(message.jid, '*Not found!!😕*', MessageType.text, { quoted: message.data });
 	let msg = '```';
-	msg +=	'⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + ' ```⚕️ Büññy®Bot Movie & Series Panel ⚕️```\n' + '⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n';
+	msg +=	'⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + ' ```⚕️ Mr. B Bot Movie & Series Panel ⚕️```\n' + '⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n';
 	msg += '🎬Title      : ' + json.Title + '\n\n';
 	msg += '📅Year       : ' + json.Year + '\n\n';
 	msg += '⭐Rated      : ' + json.Rated + '\n\n';
@@ -57,7 +57,7 @@ Bunny.addCommand({ pattern: 'movie ?(.*)', desc: Lang.MOVIE_DESC ,  deleteComman
 	const json = JSON.parse(response.body);
 	if (json.Response != 'True') return await message.client.sendMessage(message.jid, '*Not found!!😕*', MessageType.text, { quoted: message.data });
 	let msg = '```';
-	msg +=	'⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + ' ```⚕️ Büññy®Bot Movie & Series Panel ⚕️```\n' + '⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n';
+	msg +=	'⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍⚍\n' + ' ```⚕️ Mr. B Bot Movie & Series Panel ⚕️```\n' + '⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n';
 	msg += '🎬Title      : ' + json.Title + '\n\n';
 	msg += '📅Year       : ' + json.Year + '\n\n';
 	msg += '⭐Rated      : ' + json.Rated + '\n\n';
@@ -116,39 +116,4 @@ Asena.addCommand({ pattern: 'anisearch ?(.*)', fromMe: false , desc: Lang.SHOW_D
   },
 )
 
-//-----------------------------------PRO THINGS-----------------------------------------------------
-
-Asena.addCommand({ pattern: 'dxnxx ?(.*)', fromMe: false , desc: Lang.SHOW_DESC,  deleteCommand: false, dontAddCommandList: true}, async (message, match) => {
-
-    if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a link😒```', MessageType.text, { quoted: message.data });
-    var apikey = await QueenAmdi.api()
-  await axios
-      .get('https://api.lolhuman.xyz/api/xnxx?apikey=' + apikey.key + `&query=${match[1]}`)
-      .then(async (response) => {
-        const {
-          title,
-	  view,
-         duration,
-	rating,
-	like,
-	dislike,
-        } = response.data[0].result
-	const {
-          link,
-        } = response.data[0].result.link
-	 const {
-          thumbnail,
-        } = response.data[0].result
-	
-	const profileBuffer = await axios.get(thumbnail, {responseType: 'arraybuffer'})
-        const msg = `*${"🎥Name"}*: ${title}\n\n*${"🌀Duration"}*: ${duration}\n\n*${"⏳Views"}*: ${view}\n\n*${"📆Like"}*: ${like}\n\n*${"📅Dislike"}*: ${dislike}\n\n*${"⭐Rating"}*: ${rating}\n\n*${"📅Link"}*: ${link}`
-       await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
-          caption: msg,
-        })
-      })
-      .catch(
-        async (err) => await message.client.sendMessage(message.jid, '*Not found!!😕*', MessageType.text, { quoted: message.data }),
-      )
-  },
-)
 

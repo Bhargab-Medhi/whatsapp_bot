@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://telegra.ph/file/fe4c3a45f781bf1009946.jpg" width="520" height="680">
-  <h1>👸💎 Mr. B Bot 💎👸</h1>
+  <h1>🤴💎 Mr. B Bot 💎🤴</h1>
 </div>
 
 

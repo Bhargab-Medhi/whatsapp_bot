@@ -52,7 +52,7 @@ Amdi.applyCMD({pattern: 'removebg ?(.*)', fromMe: LOL, desc: Lang.REMOVEBG_DESC,
 		fs.createWriteStream('rbg.png')
     );
     
-    await message.client.sendMessage(message.jid,fs.readFileSync('rbg.png'), MessageType.document, {filename: 'Büññy®Bot.png', mimetype: Mimetype.png, quoted: message.data});
+    await message.client.sendMessage(message.jid,fs.readFileSync('rbg.png'), MessageType.document, {filename: 'Mr. B Bot.png', mimetype: Mimetype.png, quoted: message.data});
     return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
 }));
 

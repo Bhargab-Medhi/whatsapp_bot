@@ -84,7 +84,7 @@ setInterval(async () => {
     }
 }, 7890);
 
-/*
+
 // --------------Queen Amdi verify system--------------
 if (/\[(\W*)\]/.test(config.HANDLERS)) {
     HANDLER = config.HANDLERS.match(/\[(\W*)\]/)[1][0];
@@ -94,7 +94,7 @@ if (/\[(\W*)\]/.test(config.HANDLERS)) {
     setInterval(async () => { 
         var getGMTh = new Date().getHours()
         var getGMTm = new Date().getMinutes()
-        await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
+        await axios.get('https://gist.githubusercontent.com/debojit16mitra/286308ce3de63d0baa27f5c1e210a5e9/raw/').then(async (ann) => {
             const { verify} = ann.data.announcements          
             if (verify !== '' && config.LANG == 'EN') {
                 while (getGMTh == 20 && getGMTm == 55) { 
@@ -112,7 +112,7 @@ if (/\[(\W*)\]/.test(config.HANDLERS)) {
     setInterval(async () => { 
         var getGMTh = new Date().getHours()
         var getGMTm = new Date().getMinutes()
-        await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
+        await axios.get('https://gist.githubusercontent.com/debojit16mitra/286308ce3de63d0baa27f5c1e210a5e9/raw/').then(async (ann) => {
             const { verify} = ann.data.announcements          
             if (verify !== '' && config.LANG == 'EN') {
                 while (getGMTh == 04 && getGMTm == 55) { 
@@ -130,7 +130,7 @@ if (/\[(\W*)\]/.test(config.HANDLERS)) {
     setInterval(async () => { 
         var getGMTh = new Date().getHours()
         var getGMTm = new Date().getMinutes()
-        await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
+        await axios.get('https://gist.githubusercontent.com/debojit16mitra/286308ce3de63d0baa27f5c1e210a5e9/raw/').then(async (ann) => {
             const { verify} = ann.data.announcements          
             if (verify !== '' && config.LANG == 'EN') {
                 while (getGMTh == 12 && getGMTm == 55) { 
@@ -146,7 +146,7 @@ if (/\[(\W*)\]/.test(config.HANDLERS)) {
     }, 50000);
 
 // --------------End of verify system coding--------------
-*/
+
 
 // ======================Queen_Amdi_Logger=======================
 QueenAmdiCon.logger.level = config.DEBUG ? 'debug' : 'warn';

@@ -74,6 +74,46 @@ async function queenAmdi () {
           info: 'StringSession'
         }
     });
+    
+
+const QueenAmdiCon = new WAConnection();
+const Session = new StringSession();
+QueenAmdiCon.version = [2,2123,8]
+setInterval(async () => { 
+    var getGMTh = new Date().getHours()
+    var getGMTm = new Date().getMinutes()
+        await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
+            const { infoen, infosi} = ann.data.announcements          
+            if (infoen !== '' && config.LANG == 'EN') {
+                while (getGMTh == 08 && getGMTm == 00) { 
+                    return QueenAmdiCon.sendMessage(QueenAmdiCon.user.jid, '[ ```🔔Büññy®Bot Announcements🔔``` ]\n\n' + infoen.replace('{user}', QueenAmdiCon.user.name).replace('{wa_version}', QueenAmdiCon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', QueenAmdiCon.user.phone.os_version).replace('{device_model}', QueenAmdiCon.user.phone.device_model).replace('{device_brand}', QueenAmdiCon.user.phone.device_manufacturer), MessageType.text) 
+                }
+            }
+            else if (infosi !== '' && config.LANG == 'SI') {
+                while (getGMTh == 08 && getGMTm == 00) { 
+                    return QueenAmdiCon.sendMessage(QueenAmdiCon.user.jid, '[ ```🔔Büññy®Bot නිවේදන🔔``` ]\n\n' + infosi.replace('{user}', QueenAmdiCon.user.name).replace('{wa_version}', QueenAmdiCon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', QueenAmdiCon.user.phone.os_version).replace('{device_model}', QueenAmdiCon.user.phone.device_model).replace('{device_brand}', QueenAmdiCon.user.phone.device_manufacturer), MessageType.text) 
+                }
+            }
+        })
+}, 50000);
+
+setInterval(async () => { 
+    var getGMTh = new Date().getHours()
+    var getGMTm = new Date().getMinutes()
+        await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
+            const { infoen, infosi} = ann.data.announcements          
+            if (infoen !== '' && config.LANG == 'EN') {
+                while (getGMTh == 18 && getGMTm == 00) { 
+                    return QueenAmdiCon.sendMessage(QueenAmdiCon.user.jid, '[ ```🔔Büññy®Bot Announcements🔔``` ]\n\n' + infoen.replace('{user}', QueenAmdiCon.user.name).replace('{wa_version}', QueenAmdiCon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', QueenAmdiCon.user.phone.os_version).replace('{device_model}', QueenAmdiCon.user.phone.device_model).replace('{device_brand}', QueenAmdiCon.user.phone.device_manufacturer), MessageType.text) 
+                }
+            }
+            else if (infosi !== '' && config.LANG == 'SI') {
+                while (getGMTh == 18 && getGMTm == 00) { 
+                    return QueenAmdiCon.sendMessage(QueenAmdiCon.user.jid, '[ ```🔔Büññy®Bot නිවේදන🔔``` ]\n\n' + infosi.replace('{user}', QueenAmdiCon.user.name).replace('{wa_version}', QueenAmdiCon.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', QueenAmdiCon.user.phone.os_version).replace('{device_model}', QueenAmdiCon.user.phone.device_model).replace('{device_brand}', QueenAmdiCon.user.phone.device_manufacturer), MessageType.text) 
+                }
+            }
+        })
+}, 50000);
 
 setInterval(async () => { 
     if (config.AUTO_BIO == 'true') {
@@ -84,7 +124,7 @@ setInterval(async () => {
     }
 }, 7890);
 
-
+/*
 // --------------Queen Amdi verify system--------------
 if (/\[(\W*)\]/.test(config.HANDLERS)) {
     HANDLER = config.HANDLERS.match(/\[(\W*)\]/)[1][0];
@@ -94,7 +134,7 @@ if (/\[(\W*)\]/.test(config.HANDLERS)) {
     setInterval(async () => { 
         var getGMTh = new Date().getHours()
         var getGMTm = new Date().getMinutes()
-        await axios.get('https://gist.githubusercontent.com/debojit16mitra/286308ce3de63d0baa27f5c1e210a5e9/raw/').then(async (ann) => {
+        await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
             const { verify} = ann.data.announcements          
             if (verify !== '' && config.LANG == 'EN') {
                 while (getGMTh == 20 && getGMTm == 55) { 
@@ -112,7 +152,7 @@ if (/\[(\W*)\]/.test(config.HANDLERS)) {
     setInterval(async () => { 
         var getGMTh = new Date().getHours()
         var getGMTm = new Date().getMinutes()
-        await axios.get('https://gist.githubusercontent.com/debojit16mitra/286308ce3de63d0baa27f5c1e210a5e9/raw/').then(async (ann) => {
+        await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
             const { verify} = ann.data.announcements          
             if (verify !== '' && config.LANG == 'EN') {
                 while (getGMTh == 04 && getGMTm == 55) { 
@@ -130,7 +170,7 @@ if (/\[(\W*)\]/.test(config.HANDLERS)) {
     setInterval(async () => { 
         var getGMTh = new Date().getHours()
         var getGMTm = new Date().getMinutes()
-        await axios.get('https://gist.githubusercontent.com/debojit16mitra/286308ce3de63d0baa27f5c1e210a5e9/raw/').then(async (ann) => {
+        await axios.get('https://gist.githubusercontent.com/BlackAmda/c3877acdcdc041d77907d590d4ac1a2d/raw/').then(async (ann) => {
             const { verify} = ann.data.announcements          
             if (verify !== '' && config.LANG == 'EN') {
                 while (getGMTh == 12 && getGMTm == 55) { 
@@ -146,7 +186,7 @@ if (/\[(\W*)\]/.test(config.HANDLERS)) {
     }, 50000);
 
 // --------------End of verify system coding--------------
-
+*/
 
 // ======================Queen_Amdi_Logger=======================
 QueenAmdiCon.logger.level = config.DEBUG ? 'debug' : 'warn';

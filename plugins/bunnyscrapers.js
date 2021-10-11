@@ -225,7 +225,7 @@ if (Config.CHAT_BOT == 'true') {
 }
 }));
 
-
+/*
 Amdi.applyCMD({pattern: 'spdf ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.SPDF_DESC }, (async (message, match) => {
 if (Config.CHAT_BOT == 'true') {
     if (match[1] === '') return await message.sendMessage(Lang.SPDF_LINK);
@@ -241,6 +241,7 @@ if (Config.CHAT_BOT == 'true') {
  await message.client.sendMessage(message.jid, '\n👸🏻 ' + Lang2.BOT + Lang2.NOT_AVAILABLE2 , MessageType.text,{quoted: message.data});
 }
 }));
+*/
 
 /*
 Amdi.applyCMD({pattern: 'currency(?: ([0-9.]+) ([a-zA-Z]+) ([a-zA-Z]+)|$|(.*))', fromMe: LOL,  deleteCommand: false, desc: Lang.CURRENCY_DESC}, (async (message, match) => {
@@ -359,7 +360,7 @@ if (Config.CHAT_BOT == 'true') {
 }
 });
 
-
+/*
 Amdi.applyCMD({pattern: 'wame ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Lang.WAME_DESC}, (async (message, match) => {    
     if (message.reply_message !== false) {
         await message.client.sendMessage(message.jid, Lang.WAME.format(message.reply_message.jid.split('@')[0], message.reply_message.jid.replace('@s.whatsapp.net', ' ')), MessageType.text, {
@@ -375,8 +376,8 @@ Amdi.applyCMD({pattern: 'wame ?(.*)', fromMe: LOL,  deleteCommand: false, desc: 
         await message.client.sendMessage(message.jid, Lang.NEED_UWONG, MessageType.text, {quoted: message.data});
     }
 }));
-
-
+*/
+/*
 Amdi.applyCMD({ pattern: 'github ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Glang.GİTHUB_DESC }, async (message, match) => {
 
     const userName = match[1]
@@ -393,7 +394,7 @@ Amdi.applyCMD({ pattern: 'github ?(.*)', fromMe: LOL,  deleteCommand: false, des
               caption: msg,
             })
 })
-
+*/
 /*
 Amdi.applyCMD({ pattern: 'tk ?(.*)', fromMe: LOL,  deleteCommand: false, desc: TKlang.TK_DESC }, async (message, match) => {
 

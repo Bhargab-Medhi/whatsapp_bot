@@ -377,7 +377,7 @@ Amdi.applyCMD({pattern: 'wame ?(.*)', fromMe: LOL,  deleteCommand: false, desc: 
 }));
 
 
-Amdi.applyCMD({ pattern: 'github ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Glang.GİTHUB_DESC, dontAddCommandList: false}, async (message, match) => {
+Amdi.applyCMD({ pattern: 'github ?(.*)', fromMe: LOL,  deleteCommand: false, desc: Glang.GİTHUB_DESC }, async (message, match) => {
 
     const userName = match[1]
  

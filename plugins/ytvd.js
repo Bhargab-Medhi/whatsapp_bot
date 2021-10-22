@@ -1,37 +1,42 @@
-
-const bunny = require('../events')
-const bunnys = require('queenamdi-public-2');
-const { MessageType, Mimetype } = require('@adiwajshing/baileys')
-const axios = require('axios')
-const FormData = require('form-data');
-const fs = require('fs');
-const ffmpeg = require('fluent-ffmpeg');
+const Asena = require('../events');
+const Bunny = require('../events');
+const QueenAmdi = require('queenamdi-public-2');
+const { MessageType } = require('@adiwajshing/baileys');
+const got = require('got');
 const Config = require('../config');
-let LOL = Config.WORKTYPE == 'public' ? false : true
-const { fetchJson, getBuffer } = require('./fetcher')
+const axios = require('axios');
+const { errorMessage, infoMessage } = require('../helpers');
 
-const Language = require('../language')
-const Lang = Language.getString('search')
+const Language = require('../language');
+const Lang = Language.getString('scrapers');
 
 
+Asena.addCommand({ pattern: 'yvd ?(.*)', fromMe: false , desc: Lang.SHOW_DESC,  deleteCommand: false}, async (message, match) => {
 
-bunny.applyCMD({ pattern: 'yvd ?(.*)', fromMe: LOL, desc: Lang.SPO_USAGE,  deleteCommand: false }, async (message, match) => {
+    if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name.```', MessageType.text, { quoted: message.data });
 
-  if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text, {quoted: message.data});    
-  var load = await message.client.sendMessage(message.jid,Lang.GET_MODD,MessageType.text, {quoted: message.data});
-
-  var apikey = await bunnys.api()
-
-  get_result = await fetchJson('https://api.lolhuman.xyz/api/ytvideo2?apikey=' + apikey.key + `&url=${match[1]}`)
-  get_result = get_result.result
-    ini_txt = ""
-        for (var x of get_result) {
-        ini_txt += `📚 Title : ${x.title}\n`
-        ini_txt += `🕺🏻 Thumbnail : ${x.thumbnail}\n`
-        ini_txt += `📁 Size : ${x.size}\n`
-        ini_txt += `⚙️ Link : ${x.link}\n\n`
-        }
-
-  await message.client.sendMessage(message.jid, '*❖ Mr. B Bot Search Engine ❖*\n' + Lang.SPOTIFY + '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ini_txt,MessageType.text, {quoted: message.data});
-  return await message.client.deleteMessage(message.jid, {id: load.key.id, remoteJid: message.jid, fromMe: true})
-})
+  await axios
+      .get(`https://docs-jojo.herokuapp.com/api/ytmp4?url=${match[1]}`)
+      .then(async (response) => {
+        const {
+	      title,
+        } = response.data[0].show
+	const {
+          quality,
+          file_size,
+          download,
+        } = response.data[0].result
+	 const {
+          thumbnail,
+        } = response.data[0].thumbnail
+	
+	const profileBuffer = await axios.get(thumbnail, {responseType: 'arraybuffer'})
+        const msg = `*${"Name"}*: ${title}\n*${"Quality"}*: ${quality}\n*${"Size"}*: ${file_size}\n*${"Download"}*: ${download}`
+       await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
+          caption: msg,
+        })
+      .catch(
+        async (err) => await message.client.sendMessage(message.jid, '*Not found!!😕*', MessageType.text, { quoted: message.data }),
+      )
+  },
+)

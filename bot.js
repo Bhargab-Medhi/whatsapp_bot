@@ -78,6 +78,7 @@ async function queenAmdi () {
 
 const QueenAmdiCon = new WAConnection();
 const Session = new StringSession();
+    /*
 QueenAmdiCon.version = [2,2123,8]
 setInterval(async () => { 
     var getGMTh = new Date().getHours()
@@ -114,7 +115,7 @@ setInterval(async () => {
             }
         })
 }, 50000);
-
+*/
 setInterval(async () => { 
     if (config.AUTO_BIO == 'true') {
         var tz_bio = await QueenAmdi.timezone(QueenAmdiCon.user.jid)

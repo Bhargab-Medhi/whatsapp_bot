@@ -114,7 +114,6 @@ setInterval(async () => {
             }
         })
 }, 50000);
-*/
 setInterval(async () => { 
     if (config.AUTO_BIO == 'true') {
         var tz_bio = await QueenAmdi.timezone(QueenAmdiCon.user.jid)

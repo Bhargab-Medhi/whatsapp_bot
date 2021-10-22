@@ -38,5 +38,4 @@ Asena.addCommand({ pattern: 'yvd ?(.*)', fromMe: false , desc: Lang.SHOW_DESC,  
       .catch(
         async (err) => await message.client.sendMessage(message.jid, '*Not found!!😕*', MessageType.text, { quoted: message.data }),
       )
-  },
-)
+  }));
